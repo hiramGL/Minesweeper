@@ -311,9 +311,9 @@ public class MyMouseAdapter extends MouseAdapter {
 									if(myPanel.colorArray[gridX][gridY].equals(coveredCell)&&(gridX <10)){
 										myPanel.colorArray[gridX][gridY] = Color.GREEN;
 									myPanel.repaint();
-									
+				
 									}
-									
+								
 								}
 								
 								
