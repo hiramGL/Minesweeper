@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Insets;
+import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Random;
@@ -11,6 +12,7 @@ public class MyMouseAdapter extends MouseAdapter {
 	private Random generator = new Random();
 	public int [] posXBomb = new int [10];
 	public int [] posYBomb = new int [10];
+	public Point [][] BombsLoc = new Point [10][10];
 	public Color bombs = Color.BLACK;
 	public Color uncoveredCell = Color.LIGHT_GRAY;
 	public Color coveredCell = Color.WHITE;
@@ -104,6 +106,7 @@ public class MyMouseAdapter extends MouseAdapter {
 				}while(quantityCol == 0 || quantityRow == 0 || myPanel.colorArray[quantityCol][quantityRow].equals(bombs));
 				posXBomb[i - 1] = quantityCol;
 				posYBomb[i - 1] = quantityRow;
+				//BombsLoc [i - 1][i - 1] = [ quantityCol] [ quantityRow];
 				bomb = true;
 				System.out.print(posXBomb[i-1] + "");
 				System.out.print(posYBomb[i-1]);
@@ -235,8 +238,10 @@ public class MyMouseAdapter extends MouseAdapter {
 							}
 							}else {
 							//On the grid other than on the left column and on the top row:
-
+                               
 								for(int posArray = 0; posArray < posXBomb.length; posArray++){
+									
+									
 									for(int i = 1; i <= 1; i++){
 										if(myPanel.colorArray[gridX][gridY].equals(coveredCell)){
 											if(gridX == posXBomb[posArray] && gridY == posYBomb[posArray]){
@@ -246,11 +251,73 @@ public class MyMouseAdapter extends MouseAdapter {
 										}
 									}
 								}
-								
-								if(myPanel.colorArray[gridX][gridY].equals(coveredCell)){
+								// SIMPLIFY THISSSS!!!!!
+								if((myPanel.colorArray[gridX][gridY].equals(coveredCell))){
+									    
+									
 									myPanel.colorArray[gridX][gridY] = uncoveredCell;
 									myPanel.repaint();
+									
+									//1 
+									gridX = gridX -1;
+									gridY = gridY - 1;
+									if(myPanel.colorArray[gridX][gridY].equals(coveredCell)&&(gridX <10)){
+										myPanel.colorArray[gridX][gridY] = Color.GREEN;
+									myPanel.repaint();
+									
+									}
+									
+									//2 
+									gridY = gridY + 1;
+									if(myPanel.colorArray[gridX][gridY].equals(coveredCell)&&(gridX <10)){
+										myPanel.colorArray[gridX][gridY] = Color.GREEN;
+									myPanel.repaint();
+									
+									}
+									
+									//3 
+									gridY = gridY + 1;
+									if(myPanel.colorArray[gridX][gridY].equals(coveredCell)&&((gridX < 10))){
+										myPanel.colorArray[gridX][gridY] = Color.GREEN;
+									myPanel.repaint();
+									}
+									//4
+									gridX = gridX + 1;
+									if(myPanel.colorArray[gridX][gridY].equals(coveredCell)&&(gridX <10)){
+										myPanel.colorArray[gridX][gridY] = Color.GREEN;
+									myPanel.repaint();
+									}
+									//5
+									gridX = gridX + 1;
+									if(myPanel.colorArray[gridX][gridY].equals(coveredCell)&&(gridX <10)){
+										myPanel.colorArray[gridX][gridY] = Color.GREEN;
+									myPanel.repaint();
+									}
+									//6
+									
+									gridY = gridY -1;
+									if(myPanel.colorArray[gridX][gridY].equals(coveredCell)&&(gridX <10)){
+										myPanel.colorArray[gridX][gridY] = Color.GREEN;
+									myPanel.repaint();
+									}
+									//7
+									
+									gridY = gridY -1;
+									if(myPanel.colorArray[gridX][gridY].equals(coveredCell)&&(gridX <10)){
+										myPanel.colorArray[gridX][gridY] = Color.GREEN;
+									myPanel.repaint();
+									}
+									gridX = gridX - 1;
+									if(myPanel.colorArray[gridX][gridY].equals(coveredCell)&&(gridX <10)){
+										myPanel.colorArray[gridX][gridY] = Color.GREEN;
+									myPanel.repaint();
+									
+									}
+									
 								}
+								
+								
+								
 								}
 							}
 						}
