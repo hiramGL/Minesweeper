@@ -235,7 +235,7 @@ public class MyMouseAdapter extends MouseAdapter {
 							}
 							}else {
 							//On the grid other than on the left column and on the top row:
-								
+
 								for(int posArray = 0; posArray < posXBomb.length; posArray++){
 									for(int i = 1; i <= 1; i++){
 										if(myPanel.colorArray[gridX][gridY].equals(coveredCell)){
@@ -251,11 +251,11 @@ public class MyMouseAdapter extends MouseAdapter {
 									myPanel.colorArray[gridX][gridY] = uncoveredCell;
 									myPanel.repaint();
 								}
-								
+								}
 							}
 						}
 					}
-				}
+			//gridX != posXBomb[posArray] && gridY != posYBomb[posArray]
 			break;
 		case 3:		//Right mouse button
 			//Use of Flag
