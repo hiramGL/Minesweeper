@@ -90,7 +90,7 @@ public class MyMouseAdapter extends MouseAdapter {
 		int centery = ClickedInY;
 		int newGridX = ClickedInX - 1;
 		int newGridY = ClickedInY -1;
-		//FIXX	!!!
+		//FIXX	!!!!
 		if(newGridX != 0 && newGridY != 0){
 			for(int i =1; i<=3;i++){
 			int sum = 1;
