@@ -91,49 +91,8 @@ public class MyMouseAdapter extends MouseAdapter {
 		int newGridX = ClickedInX - 1;
 		int newGridY = ClickedInY -1;
 		//FIXX	!!!!
-		if(newGridX != 0 && newGridY != 0){
-			for(int i =1; i<=3;i++){
-			int sum = 1;
-				if(HasBomb(e,newGridX, newGridY) == true){
-			
-					QuantityOfBombsAround = QuantityOfBombsAround + 1;
-				}
-				else{
-						myPanelB.colorArray[newGridX][newGridY] = Color.BLUE;
-					}
+		//If X=0 and Y =0
 		
-				newGridY = newGridY + sum;
-			}
-			newGridX = ClickedInX -1;
-			newGridY = ClickedInY - 1;
-				if(centery + 1 !=10){
-					for(int i = 1; i<=3; i++){
-						if(HasBomb(e,newGridX, newGridY) == true){
-							QuantityOfBombsAround = QuantityOfBombsAround + 1;
-						}
-						else{
-							myPanelB.colorArray[newGridX][newGridY] = Color.BLUE;
-						}
-						newGridX = newGridX +1;
-					}
-			
-		}
-				newGridX = ClickedInX + 1;
-				newGridY = ClickedInY -1 ;
-				
-				if(centerx + 1 != 10){
-					for(int i = 1; i<=3; i++){
-						if(HasBomb(e,newGridX, newGridY) == true){
-							QuantityOfBombsAround = QuantityOfBombsAround + 1;
-						}
-						else{
-							//myPanelB.colorArray[newGridX][newGridY] = Color.BLUE;
-						}
-						newGridY = newGridY +1;
-					}
-					
-				}
-		}
 		System.out.println(QuantityOfBombsAround);
 		return QuantityOfBombsAround;
 	}
@@ -361,8 +320,10 @@ public class MyMouseAdapter extends MouseAdapter {
 									myPanel.repaint();
 								}
 								else{
+									if( HasBomb(e,gridX,gridY)){
 									myPanel.colorArray[gridX][gridY] = bombs;
 									myPanel.repaint();
+									}
 								}
 				
 								
