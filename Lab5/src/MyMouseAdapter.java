@@ -93,6 +93,7 @@ public class MyMouseAdapter extends MouseAdapter {
 		//FIXX	!!!!
 		//If X=0 and Y =0
 		
+		
 		System.out.println(QuantityOfBombsAround);
 		return QuantityOfBombsAround;
 	}
