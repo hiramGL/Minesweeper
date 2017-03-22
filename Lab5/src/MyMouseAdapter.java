@@ -81,7 +81,7 @@ public class MyMouseAdapter extends MouseAdapter {
 					return;
 				}
 			}
-			//5575
+			//5575c
 			JFrame myFrame = (JFrame)c;
 			MyPanel myPanel = (MyPanel) myFrame.getContentPane().getComponent(0);  //Can also loop among components to find MyPanel
 			Insets myInsets = myFrame.getInsets();
