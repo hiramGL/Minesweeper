@@ -68,7 +68,7 @@ public class MyMouseAdapter extends MouseAdapter {
 			panel.repaint();
 			break;
 		default:    //Some other button (2 = Middle mouse button, etc.)
-			//Do nothing
+			//Do nothing!
 			break;
 		}
 	}
